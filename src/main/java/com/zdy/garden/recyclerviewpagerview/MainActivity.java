@@ -50,10 +50,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         pageIndicator = (MyPageIndicator) findViewById(R.id.pageindicator);
-        colums = calculateColums();
-        itemWidth = getResources().getDisplayMetrics().widthPixels / colums;
-        itemHeight = pagerViewMaxHeight / 2;
-//        screenWidth = getResources().getDisplayMetrics().widthPixels;
+        calculateColums();
+        calculateWH();
 //        pageGridView = (PageGridView) findViewById(R.id.pagingGridView);
         pageGridView2 = (PageGridView) findViewById(R.id.pagingGridView2);
 //        pageGridView3 = (PageGridView) findViewById(R.id.pagingGridView3);
@@ -73,12 +71,21 @@ public class MainActivity extends AppCompatActivity {
         pageGridView2.setPageIndicator(pageIndicator);
     }
 
+    //计算宽高
+    private void calculateWH() {
+        int screenWidth = getResources().getDisplayMetrics().widthPixels;
+        itemWidth = screenWidth / colums;
+        pagerViewMaxHeight = screenWidth * 2 / 3;
+        itemHeight = pagerViewMaxHeight / 2;
+    }
+
+
     //计算列数(行数固定为2)
-    public int calculateColums() {
+    public void calculateColums() {
         if (data.size() > 4) {
-            return 3;
+            colums = 3;
         } else {
-            return 2;
+            colums = 2;
         }
     }
 

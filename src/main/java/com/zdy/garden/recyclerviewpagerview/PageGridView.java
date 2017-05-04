@@ -15,9 +15,10 @@ import android.view.View;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * 可分页的gridview
- * Created by zhuguohui on 2016/8/20 0020.
+/**可分页ViewPager
+ * Created with Android Studio.
+ * Time: 9:40  2017/4/25
+ * Author:ZhuangYuan
  */
 public class PageGridView extends RecyclerView {
     private int mRows = 0;
@@ -124,6 +125,10 @@ public class PageGridView extends RecyclerView {
         }
     }
 
+    @Override
+    public boolean fling(int velocityX, int velocityY) {
+        return false;
+    }
 
     @Override
     public boolean dispatchTouchEvent(MotionEvent ev) {

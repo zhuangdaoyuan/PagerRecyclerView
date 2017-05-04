@@ -5,9 +5,10 @@ import android.util.AttributeSet;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
-
 /**
- * Created by zhuguohui on 2016/8/21 0021.
+ * Created with Android Studio.
+ * Time: 9:40  2017/4/25
+ * Author:ZhuangYuan
  */
 public class MyPageIndicator extends LinearLayout implements PageGridView.PageIndicator {
     public MyPageIndicator(Context context) {
